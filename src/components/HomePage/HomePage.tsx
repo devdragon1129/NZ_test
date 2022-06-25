@@ -1,17 +1,17 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { Container, Button, Page, Dropdown, DropdownProps, Pagination, PaginationProps, Row, Header, Icon, Section } from 'decentraland-ui'
+import { Container, Button, Page, Dropdown, DropdownProps, PaginationProps, Section } from 'decentraland-ui'
 
 import BuilderIcon from 'components/Icon'
 import ProjectCard from 'components/ProjectCard'
-import Footer from 'components/Footer'
+// import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
 import LoadingPage from 'components/LoadingPage'
 import SyncToast from 'components/SyncToast'
 import { SortBy } from 'modules/ui/dashboard/types'
-import Navigation from 'components/Navigation'
-import { NavigationTab } from 'components/Navigation/Navigation.types'
+// import Navigation from 'components/Navigation'
+// import { NavigationTab } from 'components/Navigation/Navigation.types'
 import { locations } from 'routing/locations'
 import { PaginationOptions } from 'routing/utils'
 import { Props, DefaultProps } from './HomePage.types'
@@ -138,7 +138,7 @@ export default class HomePage extends React.PureComponent<Props> {
   }
 
   render() {
-    const { projects, isFetching, totalPages, page, isLoggingIn, poolList } = this.props
+    const { projects, isFetching, totalPages, isLoggingIn } = this.props
     if (isLoggingIn || isFetching) {
       return <LoadingPage />
     }
@@ -149,21 +149,21 @@ export default class HomePage extends React.PureComponent<Props> {
       <>
         <Navbar isFullscreen />
         <Page isFullscreen className="HomePage">
-          <Navigation activeTab={NavigationTab.SCENES}>
+          {/* <Navigation activeTab={NavigationTab.SCENES}> */}
             <SyncToast />
-          </Navigation>
+          {/* </Navigation> */}
           <Container>
             <div className="projects-menu">
               <div className="items-count">{t('home_page.results', { count: projects.length })}</div>
               <div className="actions">
                 {projects.length > 1 ? this.renderSortDropdown() : null}
                 {this.renderImportButton()}
-                {this.renderCreateButton()}
+                {/* {this.renderCreateButton()} */}
               </div>
             </div>
             <Section className={`project-cards ${hasPagination ? 'has-pagination' : ''}`}>
               <div className="CardList">{this.renderProjects()}</div>
-              {hasPagination ? (
+              {/* {hasPagination ? (
                 <Pagination
                   firstItem={null}
                   lastItem={null}
@@ -171,9 +171,9 @@ export default class HomePage extends React.PureComponent<Props> {
                   totalPages={totalPages}
                   onPageChange={this.handlePageChange}
                 />
-              ) : null}
+              ) : null} */}
             </Section>
-            {poolList ? (
+            {/* {poolList ? (
               <>
                 <Row>
                   <Row className="scene-pool-menu">
@@ -193,10 +193,10 @@ export default class HomePage extends React.PureComponent<Props> {
                   ))}
                 </div>
               </>
-            ) : null}
+            ) : null} */}
           </Container>
         </Page>
-        <Footer />
+        {/* <Footer /> */}
       </>
     )
   }
