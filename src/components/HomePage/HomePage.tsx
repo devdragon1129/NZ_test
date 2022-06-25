@@ -138,7 +138,7 @@ export default class HomePage extends React.PureComponent<Props> {
   }
 
   render() {
-    const { projects, isFetching, totalPages, page, isLoggingIn, poolList } = this.props
+    const { projects, isFetching, totalPages, isLoggingIn } = this.props
     if (isLoggingIn || isFetching) {
       return <LoadingPage />
     }
