@@ -268,7 +268,6 @@ module.exports = function(webpackEnv) {
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
 
-        { test: /\.tsx?$/, loader: "ts-loader", options: { allowTsInNodeModules: true} },
         // First, run the linter.
         // It's important to do this before Babel processes the JS.
         {
@@ -304,8 +303,7 @@ module.exports = function(webpackEnv) {
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
-              // test: /\.(js|mjs|jsx|ts|tsx)$/,
-              test: /\.(js|mjs|jsx)$/,
+              test: /\.(js|mjs|jsx|ts|tsx)$/,
               include: paths.appSrc,
               loader: require.resolve('babel-loader'),
               options: {
