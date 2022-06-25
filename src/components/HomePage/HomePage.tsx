@@ -5,7 +5,7 @@ import { Container, Button, Page, Dropdown, DropdownProps, Pagination, Paginatio
 
 import BuilderIcon from 'components/Icon'
 import ProjectCard from 'components/ProjectCard'
-import Footer from 'components/Footer'
+// import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
 import LoadingPage from 'components/LoadingPage'
 import SyncToast from 'components/SyncToast'
@@ -149,21 +149,21 @@ export default class HomePage extends React.PureComponent<Props> {
       <>
         <Navbar isFullscreen />
         <Page isFullscreen className="HomePage">
-          <Navigation activeTab={NavigationTab.SCENES}>
+          {/* <Navigation activeTab={NavigationTab.SCENES}> */}
             <SyncToast />
-          </Navigation>
+          {/* </Navigation> */}
           <Container>
             <div className="projects-menu">
               <div className="items-count">{t('home_page.results', { count: projects.length })}</div>
               <div className="actions">
                 {projects.length > 1 ? this.renderSortDropdown() : null}
                 {this.renderImportButton()}
-                {this.renderCreateButton()}
+                {/* {this.renderCreateButton()} */}
               </div>
             </div>
             <Section className={`project-cards ${hasPagination ? 'has-pagination' : ''}`}>
               <div className="CardList">{this.renderProjects()}</div>
-              {hasPagination ? (
+              {/* {hasPagination ? (
                 <Pagination
                   firstItem={null}
                   lastItem={null}
@@ -171,9 +171,9 @@ export default class HomePage extends React.PureComponent<Props> {
                   totalPages={totalPages}
                   onPageChange={this.handlePageChange}
                 />
-              ) : null}
+              ) : null} */}
             </Section>
-            {poolList ? (
+            {/* {poolList ? (
               <>
                 <Row>
                   <Row className="scene-pool-menu">
@@ -193,10 +193,10 @@ export default class HomePage extends React.PureComponent<Props> {
                   ))}
                 </div>
               </>
-            ) : null}
+            ) : null} */}
           </Container>
         </Page>
-        <Footer />
+        {/* <Footer /> */}
       </>
     )
   }
