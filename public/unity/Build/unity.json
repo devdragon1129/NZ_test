@@ -16,5 +16,5 @@
 "ReplaceCachedXMLHttpRequestDisabled": false,
 "CachedXMLHttpRequestDisabled": true,
 "CachedXMLHttpRequestLoader": true,
-"unityVersion": "2022.1.6"
+"unityVersion": "2021.3.5f1"
 }
